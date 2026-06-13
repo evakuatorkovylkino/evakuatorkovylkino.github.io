@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Эвакуатор Ковылкино 24/7 | Москва, Нижний Новгород, Саранск</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #1a2c3e;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0b2b3b 0%, #123e52 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .logo p {
+            font-size: 0.85rem;
+            opacity: 0.85;
+            font-weight: 500;
+        }
+
+        .header-phone {
+            background: linear-gradient(145deg, #ff9900, #ff7700);
+            padding: 12px 28px;
+            border-radius: 70px;
+            font-weight: 800;
+            font-size: 1.7rem;
+            letter-spacing: 1.5px;
+            color: #1a2c3e;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+            font-family: 'Inter', monospace;
+            display: inline-block;
+        }
+
+        .round-clock {
+            background: rgba(255,255,255,0.15);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero {
+            background: linear-gradient(107deg, #0a2f3f, #1a4a62);
+            padding: 80px 0;
+            color: white;
+            border-radius: 0 0 32px 32px;
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+        
+        .hero-main-city {
+            font-size: 4.2rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff, #ffdd99);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+        .hero h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffdd99;
+        }
+        .hero-badge {
+            background: #ff8800;
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #1e2f3a;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+        .city-tag {
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(8px);
+            display: inline-block;
+            padding: 10px 26px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 10px;
+            border-left: 4px solid #ff8800;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin: 60px 0;
+        }
+        .feature-card {
+            background: white;
+            flex: 1 1 260px;
+            border-radius: 28px;
+            padding: 28px 20px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            transition: all 0.25s;
+        }
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 35px rgba(0,0,0,0.1);
+        }
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 18px;
+        }
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+        .feature-card p {
+            color: #2c4b62;
+        }
+
+        .gallery-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 50px 0 30px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+        .gallery-item {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+            transition: 0.2s;
+            text-align: center;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        .gallery-icon {
+            font-size: 5rem;
+            background: linear-gradient(135deg, #ff8800, #ff5500);
+            padding: 40px 0;
+            color: white;
+            border-radius: 24px 24px 0 0;
+        }
+        .gallery-item:nth-child(2) .gallery-icon { background: linear-gradient(135deg, #2c5a6e, #1e4a6b); }
+        .gallery-item:nth-child(3) .gallery-icon { background: linear-gradient(135deg, #1a4a62, #0a2f3f); }
+        .gallery-caption {
+            padding: 20px 18px;
+        }
+        .gallery-caption h4 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+        .gallery-caption p {
+            color: #3e5a6b;
+        }
+
+        .round-the-clock {
+            background: linear-gradient(120deg, #07212e, #0a2f3f);
+            color: white;
+            border-radius: 48px;
+            padding: 55px 30px;
+            text-align: center;
+            margin: 50px 0;
+        }
+        .clock-big {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+        .round-the-clock h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        .round-the-clock p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .geo-section {
+            background: white;
+            border-radius: 48px;
+            padding: 45px 30px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .geo-section h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #0b2b3b;
+        }
+        .city-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        .city-badge {
+            background: #eef2f7;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            color: #1e4a6b;
+            font-size: 1.1rem;
+        }
+        .geo-desc {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 20px auto 0;
+            color: #2c5a6e;
+            line-height: 1.4;
+        }
+
+        .contact-bottom {
+            background: linear-gradient(145deg, #ffffff, #f0f4f8);
+            border-radius: 60px;
+            padding: 50px 30px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .bottom-phone {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff9900, #ff5500);
+            display: inline-block;
+            padding: 20px 50px;
+            border-radius: 90px;
+            letter-spacing: 3px;
+            font-family: 'Inter', monospace;
+            margin: 20px 0;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+        }
+        .work-info {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 20px;
+            color: #0b2b3b;
+        }
+
+        .info-section {
+            background-color: #ffffff;
+            border-radius: 40px;
+            padding: 40px 30px;
+            margin: 20px 0 40px;
+            text-align: center;
+        }
+        .info-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        .info-section p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #1e4a6b;
+        }
+
+        .footer {
+            background: #0b2b3b;
+            color: #bdd3e0;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 32px 32px 0 0;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 760px) {
+            .hero-main-city { font-size: 2.8rem; }
+            .hero h2 { font-size: 1.5rem; }
+            .header-inner { flex-direction: column; text-align: center; }
+            .header-phone { font-size: 1.2rem; padding: 8px 20px; }
+            .bottom-phone { font-size: 1.9rem; padding: 12px 25px; }
+            .container { padding: 0 16px; }
+            .city-badge { font-size: 0.85rem; padding: 6px 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-inner">
+        <div class="logo">
+            <h1>🚛 Эвакуатор Ковылкино</h1>
+            <p>24/7 · Без выходных</p>
+        </div>
+        <div class="round-clock">
+            <span>⏱️</span> Работаем 24/7 · Без выходных
+        </div>
+        <div class="header-phone">
+            📞 +7 927 642 65 55
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="hero">
+        <div class="container hero-content">
+            <div class="hero-badge">🚨 КРУГЛОСУТОЧНАЯ ЭВАКУАЦИЯ 🚨</div>
+            <div class="hero-main-city">КОВЫЛКИНО</div>
+            <h2>Эвакуатор в Москву, Нижний Новгород, Саранск и по трассам</h2>
+            <p>Профессиональная эвакуация легковых авто, внедорожников, мотоциклов и спецтехники. Работаем без выходных. <strong>База — Ковылкино</strong>, выезжаем в любую точку.</p>
+            <div class="city-tag">
+                📍 Работаем из КОВЫЛКИНО → выезд в Москву, Нижний Новгород, Саранск, Рязань, Пензу и другие города
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">⏳</div>
+                <h3>24/7 без выходных</h3>
+                <p>Эвакуация в любое время суток — ночью, в праздники, всегда на связи.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚛</div>
+                <h3>Любой тип транспорта</h3>
+                <p>Перевозим легковые авто, внедорожники, мотоциклы, квадроциклы и спецтехнику.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Безопасная эвакуация</h3>
+                <p>Надёжные стяжки, мягкие платформы, полная страховка груза.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Честные цены</h3>
+                <p>Без посредников и офисных наценок — договоримся на месте.</p>
+            </div>
+        </div>
+
+        <h2 class="gallery-title">📸 Примеры нашей работы</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="gallery-icon">🚛🔧</div>
+                <div class="gallery-caption">
+                    <h4>Эвакуатор с платформой</h4>
+                    <p>Бережная погрузка любых автомобилей</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-icon">🚙🛞</div>
+                <div class="gallery-caption">
+                    <h4>Эвакуация внедорожников</h4>
+                    <p>Перевозим полный привод и крупногабаритные авто</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-icon">🌙✨</div>
+                <div class="gallery-caption">
+                    <h4>Ночная эвакуация 24/7</h4>
+                    <p>Работаем круглосуточно без исключений</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-icon">🏍️🔩</div>
+                <div class="gallery-caption">
+                    <h4>Спецтехника и мото</h4>
+                    <p>Перевозим мотоциклы, квадроциклы, строительную технику</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="geo-section">
+            <h3>🚛 Работаем из <span style="color:#ff8800;">КОВЫЛКИНО</span> по всей Центральной России</h3>
+            <div class="city-list">
+                <span class="city-badge" style="background:#ff8800; color:#1e2f3a;">⭐ Ковылкино (база)</span>
+                <span class="city-badge">🚗 Москва</span>
+                <span class="city-badge">🏙️ Нижний Новгород</span>
+                <span class="city-badge">🏞️ Саранск</span>
+                <span class="city-badge">🌆 Рязань</span>
+                <span class="city-badge">🏛️ Пенза</span>
+                <span class="city-badge">🛣️ Владимир</span>
+                <span class="city-badge">🌲 Тамбов</span>
+            </div>
+            <div class="geo-desc">
+                ⚡ Эвакуируем как по городу Ковылкино, так и на дальние расстояния. Выезжаем в Москву (до 600 км), Нижний Новгород, Саранск и другие города по трассам М-5, М-7, Р-158. 
+                Встречаем клиентов на месте ДТП, из гаража, с трассы. Работаем без посредников — честно и за разумные деньги.
+            </div>
+        </div>
+
+        <div class="round-the-clock">
+            <div class="clock-big">🕛 24/7 🕛</div>
+            <h2>Эвакуатор в Ковылкино работает круглосуточно</h2>
+            <p>Звоните в любое время — день, ночь, праздник. Выезжаем сразу после звонка. Без посредников, без офисных наценок.</p>
+        </div>
+
+        <div class="contact-bottom">
+            <h3 style="font-size: 1.8rem;">📞 Звоните в любое время</h3>
+            <div class="bottom-phone">
+                +7 927 642 65 55
+            </div>
+            <div class="work-info">
+                ✅ Доступен 24/7 · Честные цены
+            </div>
+            <p style="margin-top: 25px; font-size: 1.1rem; color:#1e4a6b;">Эвакуация из Ковылкино в Москву, Нижний Новгород, Саранск и другие города. Быстрый выезд, опытный мастер.</p>
+            <p style="margin-top: 15px; font-size:0.95rem;">⭐ Работаем по всей области и трассам.</p>
+        </div>
+
+        <div class="info-section">
+            <h3>Эвакуация из Ковылкино</h3>
+            <p>Эвакуируем легковые автомобили, внедорожники, мотоциклы, квадроциклы, мини-погрузчики и спецтехнику. Эвакуатор оснащён современной платформой и лебёдкой. Работаем аккуратно и оперативно. Звоните — поможем! Маршруты: <strong>Ковылкино — Москва, Ковылкино — Нижний Новгород, Ковылкино — Саранск</strong>, а также попутные города.</p>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2026 Эвакуатор Ковылкино — работаем 24/7, без выходных.</p>
+        <p style="margin-top: 8px; font-size:0.85rem;">Круглосуточно. Эвакуация в Москву, Нижний Новгород, Саранск и по всей области. Телефон: +7 927 642 65 55</p>
+    </div>
+</footer>
+
+</body>
+</html>
